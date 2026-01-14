@@ -1,0 +1,193 @@
+.ruleta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ruleta-wrapper {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 40px 0;
+  overflow: visible;
+}
+
+.ruleta {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  border: 8px solid white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+  overflow: visible;
+}
+
+.ruleta.girando {
+  transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.segmento {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 50%;
+  transform-origin: 0 100%;
+  overflow: visible;
+}
+
+.segmento-texto {
+  position: absolute;
+  /* El segmento rota desde (0, 100%) que es el centro de la ruleta */
+  /* Posicionamos el texto para que se extienda desde el centro hacia el borde */
+  left: 0;
+  top: 100%;
+  transform-origin: 0 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.9),
+    -1px -1px 2px rgba(0, 0, 0, 0.9),
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 8px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  letter-spacing: 0.5px;
+  /* Centrar los nombres en el segmento de color */
+  /* El texto debe estar centrado en el ancho del segmento desde el 50% hasta el borde */
+  left: 50%;
+  top: 100%;
+  transform-origin: 0 0;
+  padding-top: 2px;
+  padding-left: 0;
+  padding-right: 4px; /* 1mm del borde */
+  text-align: center; /* Centrar el texto en el segmento */
+  /* El ancho se extiende desde el 50% hasta casi el borde, centrado */
+  width: calc(50% - 4px);
+  max-width: calc(50% - 4px);
+  min-width: 100px;
+  overflow: visible;
+  text-overflow: ellipsis;
+  display: inline-block;
+  box-sizing: content-box;
+  /* Ajustar para centrar: empezar desde el 50% y centrar el texto en ese espacio */
+  margin-left: 0;
+}
+
+.puntero {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 40px solid #ffd700;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  z-index: 10;
+}
+
+.btn-girar {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  margin-top: 30px;
+}
+
+.btn-girar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-girar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ganador {
+  margin-top: 40px;
+  text-align: center;
+  animation: aparecer 0.5s ease-in;
+}
+
+.ganador h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ganador-nombre {
+  color: #ffd700;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  animation: brillar 1s ease-in-out infinite alternate;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brillar {
+  from {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+  to {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 20px #ffd700;
+  }
+}
+
+.mensaje {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+
+@media (max-width: 600px) {
+  .ruleta-wrapper {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .titulo {
+    font-size: 1.8rem;
+  }
+  
+  .ganador-nombre {
+    font-size: 2rem;
+  }
+}

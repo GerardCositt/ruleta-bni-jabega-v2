@@ -1,0 +1,176 @@
+.backdoor-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.backdoor-container h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.instrucciones {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.backdoor-login {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  text-align: center;
+}
+
+.backdoor-login h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.advertencia {
+  color: #ffd700;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.backdoor-login input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.backdoor-login button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #d63031 0%, #c0392b 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.backdoor-login button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.backdoor-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.selector-miembros,
+.confirmacion {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.selector-miembros h3,
+.confirmacion h3 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.lista-miembros-backdoor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.miembro-btn {
+  padding: 12px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.miembro-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateX(5px);
+}
+
+.miembro-btn.seleccionado {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #ffd700;
+  font-weight: bold;
+}
+
+.ganador-seleccionado {
+  color: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 215, 0, 0.2);
+  border-radius: 8px;
+  border: 2px solid #ffd700;
+}
+
+.ganador-seleccionado strong {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.confirmacion input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-forzar {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #d63031 0%, #c0392b 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-forzar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-forzar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .backdoor-content {
+    grid-template-columns: 1fr;
+  }
+}

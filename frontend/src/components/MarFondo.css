@@ -1,0 +1,176 @@
+/* Fondo de mar con olas animadas estilo Málaga */
+.mar-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.mar-fondo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    #6bb3ff 0%,
+    #5ba3f5 15%,
+    #4a90e2 30%,
+    #3d7fc9 50%,
+    #357abd 70%,
+    #2d6ba3 85%,
+    #255a8a 100%
+  );
+}
+
+/* Capa de olas 1 - Olas grandes suaves */
+.ola-capa-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 150px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,80 C200,60 400,100 600,80 C800,60 1000,100 1200,80 L1200,120 L0,120 Z' fill='%23357abd' opacity='0.3'/%3E%3C/svg%3E") repeat-x;
+  animation: ola-movimiento-1 12s ease-in-out infinite;
+}
+
+/* Capa de olas 2 - Olas medianas */
+.ola-capa-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 120px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,70 C250,50 500,90 750,70 C900,60 1050,80 1200,70 L1200,120 L0,120 Z' fill='%234a90e2' opacity='0.4'/%3E%3C/svg%3E") repeat-x;
+  animation: ola-movimiento-2 10s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+/* Capa de olas 3 - Olas pequeñas */
+.ola-capa-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C300,40 600,80 900,60 C1050,50 1150,70 1200,60 L1200,120 L0,120 Z' fill='%235ba3f5' opacity='0.5'/%3E%3C/svg%3E") repeat-x;
+  animation: ola-movimiento-3 8s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+/* Capa de olas 4 - Olas muy suaves en la superficie */
+.ola-capa-4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C400,30 800,70 1200,50 L1200,120 L0,120 Z' fill='%236bb3ff' opacity='0.6'/%3E%3C/svg%3E") repeat-x;
+  animation: ola-movimiento-4 6s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+/* Efecto de olas adicionales más dinámicas */
+.ola-capa-5 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C300,20 600,60 900,40 C1050,30 1150,50 1200,40 L1200,120 L0,120 Z' fill='%234a90e2' opacity='0.3'/%3E%3C/svg%3E") repeat-x;
+  animation: ola-movimiento-5 7s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.ola-capa-6 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C200,10 400,50 600,30 C800,20 1000,40 1200,30 L1200,120 L0,120 Z' fill='%235ba3f5' opacity='0.4'/%3E%3C/svg%3E") repeat-x;
+  animation: ola-movimiento-6 5s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+@keyframes ola-movimiento-1 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes ola-movimiento-2 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+}
+
+@keyframes ola-movimiento-3 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-35%);
+  }
+}
+
+@keyframes ola-movimiento-4 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-40%);
+  }
+}
+
+@keyframes ola-movimiento-5 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-35%);
+  }
+}
+
+@keyframes ola-movimiento-6 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-45%);
+  }
+}
+
+/* Efecto de brillo del sol en el agua */
+.brillo-sol {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: brillo-movimiento 15s ease-in-out infinite;
+}
+
+@keyframes brillo-movimiento {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-20px) scale(1.1);
+    opacity: 0.5;
+  }
+}

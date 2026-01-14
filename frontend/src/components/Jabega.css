@@ -1,0 +1,334 @@
+.jabega-container {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  z-index: 1000;
+  pointer-events: none;
+  /* Animación: movimiento de derecha a izquierda y viceversa */
+  animation: movimiento-lateral 4s ease-in-out forwards;
+}
+
+@keyframes movimiento-lateral {
+  0% {
+    /* Empezar desde la derecha, fuera de la pantalla */
+    bottom: 50px;
+    left: 100%;
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  
+  5% {
+    opacity: 1;
+  }
+  
+  25% {
+    /* Mover hacia la izquierda, pasando por delante de la ruleta */
+    bottom: 50px;
+    left: calc(50% + 400px);
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+  
+  50% {
+    /* Llegar a la izquierda */
+    bottom: 50px;
+    left: calc(50% - 400px);
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+  
+  75% {
+    /* Volver hacia la derecha */
+    bottom: 50px;
+    left: calc(50% + 400px);
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+  
+  100% {
+    /* Posición final: abajo en el centro */
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.mar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, #4a90e2 0%, #357abd 100%);
+  overflow: hidden;
+}
+
+.ola {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: ola-movimiento 3s ease-in-out infinite;
+}
+
+.ola1 {
+  left: -50%;
+  animation-delay: 0s;
+}
+
+.ola2 {
+  left: -50%;
+  animation-delay: 1s;
+  height: 15px;
+}
+
+.ola3 {
+  left: -50%;
+  animation-delay: 2s;
+  height: 10px;
+}
+
+@keyframes ola-movimiento {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+}
+
+.jabega {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 80px;
+  animation: remar 1s ease-in-out infinite;
+}
+
+@keyframes remar {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.barca {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.proa {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 15px solid #8b4513;
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+}
+
+.cuerpo-barca {
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  width: calc(100% - 30px);
+  height: 30px;
+  background: linear-gradient(to bottom, #a0522d 0%, #8b4513 100%);
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.popa {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 15px solid #8b4513;
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+}
+
+.persona {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 50px;
+  animation: remar-persona 1s ease-in-out infinite;
+}
+
+@keyframes remar-persona {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(5deg);
+  }
+}
+
+.cabeza {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.cara {
+  width: 100%;
+  height: 100%;
+  background: #fdbcb4;
+  border-radius: 50%;
+  position: relative;
+}
+
+.pelo {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 15px;
+  background: #8b4513;
+  border-radius: 50% 50% 0 0;
+}
+
+.cuerpo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 30px;
+}
+
+.torso {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 20px;
+  background: #4a90e2;
+  border-radius: 3px;
+}
+
+.persona.masculino .torso {
+  background: #2c5aa0;
+}
+
+.persona.femenino .torso {
+  background: #e91e63;
+}
+
+.brazo-izq,
+.brazo-der {
+  position: absolute;
+  top: 5px;
+  width: 8px;
+  height: 25px;
+  background: #fdbcb4;
+  border-radius: 4px;
+  transform-origin: top center;
+  animation: brazo-movimiento 1s ease-in-out infinite;
+}
+
+.brazo-izq {
+  left: -10px;
+  animation-delay: 0s;
+}
+
+.brazo-der {
+  right: -10px;
+  animation-delay: 0.5s;
+}
+
+@keyframes brazo-movimiento {
+  0%, 100% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+.remo-izq,
+.remo-der {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 20px;
+  background: #654321;
+  border-radius: 2px;
+}
+
+.remo-agua {
+  position: absolute;
+  bottom: 40px;
+  width: 30px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: remo-agua-movimiento 1s ease-in-out infinite;
+}
+
+.remo-izq-agua {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.remo-der-agua {
+  right: 20%;
+  animation-delay: 0.5s;
+}
+
+@keyframes remo-agua-movimiento {
+  0%, 100% {
+    transform: scale(0.8) translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2) translateY(-10px);
+    opacity: 0.8;
+  }
+}
+
+.nombre-jabega {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  animation: nombre-flotar 2s ease-in-out infinite;
+}
+
+@keyframes nombre-flotar {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}

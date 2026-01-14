@@ -1,0 +1,213 @@
+.admin-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.admin-container h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login-box {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.login-box h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-box input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-box button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-box button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-box button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-agregar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+
+.form-agregar input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-agregar button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form-agregar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.lista-miembros {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.miembro-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.miembro-item .nombre {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.miembro-item .nombre.inactivo {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.acciones button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.btn-activo {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.btn-activo.activo {
+  background: #00b894;
+}
+
+.btn-activo.inactivo {
+  background: #d63031;
+}
+
+.acciones button:not(.btn-activo) {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.acciones button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-eliminar {
+  background: #d63031 !important;
+}
+
+.btn-eliminar:hover {
+  background: #c0392b !important;
+}
+
+.editando {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.editando input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.editando button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.editando button:first-of-type {
+  background: #00b894;
+  color: white;
+}
+
+.editando button:last-of-type {
+  background: #d63031;
+  color: white;
+}
+
+.sin-miembros {
+  text-align: center;
+  color: white;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  font-size: 1.2rem;
+}
